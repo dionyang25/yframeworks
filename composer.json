@@ -1,0 +1,66 @@
+{
+    "name": "light/light",
+    "description": "Light",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fengqi",
+            "email": "lyf362345@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "light/light-framework": "1.4.*",
+        "light/medoo-model": "^1.0",
+        "light/cache-component": "^1.0",
+        "light/view-blade": "dev-master",
+        "curl/curl": "^1.8",
+        "hupu/passport-client":"dev-master",
+        "delight-im/cookie": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/",
+            "library\\": "library/"
+        }
+    },
+    "repositories": [
+        {"type": "composer", "url": "https://composer.hupu.com/repo/private/"},
+        {"type": "composer", "url": "https://composer.hupu.com/repo/packagist/"},
+        {"packagist": false},
+        {
+            "type": "vcs",
+            "url": "git@gitlab.hupu.com:light/light-framework.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.hupu.com:light/medoo-model.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.hupu.com:light/array-factory.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.hupu.com:light/cache-component.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.hupu.com:/light/view-blade.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.hupu.com:/light/view-smarty.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@gitlab.hupu.com:games/passport-service.git"
+        }
+    ],
+    "config": {
+        "prefer-source": false,
+        "prefer-dist": true,
+        "secure-http": false
+    }
+}
