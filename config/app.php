@@ -10,11 +10,16 @@ return [
     // 开发/调试模式
     'debug' => false,
 
-    // 系统日志
-    'log_file' => '/data/www-data/logs/light.log',
+    //日志模块设定统一
+    'log'=>[
+        //日志级别
+        'log_level'=>'INFO',
 
-    // 日志级别
-    'log_level' => 'ERROR',
+        // 系统日志
+        'log_file' => '/data1/log-data/light.log',
+
+        'show_memory_usage'=>1
+    ],
 
     // 启用组件
     'component' => [
