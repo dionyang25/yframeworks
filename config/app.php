@@ -21,6 +21,8 @@ return [
         'light\ViewBlade\ViewComponent',
         'app\Component\Params\ParamsComponent',
         'app\Component\Cache\RedisComponent',
+        'app\Component\Cache\YacComponent',
         'app\Component\Common\CommonComponent',
+        'app\Component\Tools\CurlComponent',
     ],
 ];

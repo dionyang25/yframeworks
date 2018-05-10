@@ -3,7 +3,7 @@ namespace app\Component\Common;
 use light\Component;
 
 /**
- * 参数存储组件
+ * 通用方法组件
  * Created by PhpStorm.
  * User: yanghaonan
  * Date: 2018/4/25

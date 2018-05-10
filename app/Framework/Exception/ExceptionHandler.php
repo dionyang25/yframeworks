@@ -7,8 +7,6 @@
  * 错误处理handler
  */
 namespace app\Framework\Exception;
-
-
 use light\Http\Response;
 
 class ExceptionHandler{
@@ -18,17 +16,13 @@ class ExceptionHandler{
         /**
          * 接口返回
          */
-        if ($exception instanceof HttpException) {
-            $ret = app('common')->error_output(
-                [
-                    'id'=>$exception->status_code,
-                    'text'=>$exception->status_code_msg
-                ]
-            );
-            $response = new Response($ret);
-            $response->send();
-            return false;
+        if ($exception instanceof UserException) {
+            return $exception->handle();
         }
+
+        //去除handler注册防止循环调用
+        restore_error_handler();
+        restore_exception_handler();
 
         //处理错误 记录日志
         app('log')->error('runtime exception: '. $exception->getMessage(), [

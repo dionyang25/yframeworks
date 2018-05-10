@@ -38,6 +38,13 @@ class RedisDriver extends RedisDriverOrigin
         return $this;
     }
 
+    /**
+     * 设置并发锁
+     */
+    public function setLock($key,$ttl = 1){
+        return $this->driver->set($key,1,['nx','ex'=>$ttl]);
+    }
+
     function __call($name, $arguments)
     {
         try{

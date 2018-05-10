@@ -6,7 +6,9 @@
  * Time: 19:41
  */
 namespace app\Framework\Exception;
-class HttpException extends \Exception{
+use light\Http\Response;
+
+class HttpException extends UserException {
     public $status_code;
     public $status_code_msg;
 
@@ -17,5 +19,17 @@ class HttpException extends \Exception{
             $this->status_code_msg = $error_code_msg[$this->status_code];
         }
         parent::__construct($message = null, $code = 0, $previous);
+    }
+
+    public function handle(){
+        $ret = app('common')->error_output(
+            [
+                'id'=>$this->status_code,
+                'text'=>$this->status_code_msg
+            ]
+        );
+        $response = new Response($ret);
+        $response->send();
+        return false;
     }
 }
